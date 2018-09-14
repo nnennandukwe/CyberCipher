@@ -2,17 +2,17 @@
 # Cyber Cipher
 ### A cryptographic Caesar Cipher Encryption Program
 Cyber Cipher is designed to take in a string of characters a user enters in in order to return an encrypted version of the string.
-Learn more about the cryptographic algorithm here https://en.wikipedia.org/wiki/Caesar_cipher
+Learn more about this cryptographic algorithm here https://en.wikipedia.org/wiki/Caesar_cipher
 ### Requirements
--- Python 3+
--- Jinja2 (Templating Engine)
--- Flask
+- Python 2.7 / 3+
+- Jinja2 (Templating Engine)
+- Flask
 ### How To Run
--- Git clone repository
--- Install above requirements one at a time with `pip install insert-name-here`
--- In your Terminal, run `python main.py`
+- Git clone repository
+- Install above requirements one at a time with `pip install insert-name-here`
+- In your Terminal, run `python main.py`
 ### Technologies Utilized
-1. Python
+1. Python 3.6
 2. Flask
 3. Jinja2 as an HTML templating engine
 4. HTML5
@@ -30,7 +30,7 @@ I was looking for interesting projects to build where I could set up a server an
 4. Hot reloading for server in order to reduce amount of server kills from errors
 ### Current Limitations to the Program
 - Users cannot enter in special characters (non English alphabetic characters into encryption  input field without causing an error in the program
--Users must enter in a string with no whitespace as a result of KeyError
+- Users must enter in a string with no whitespace as a result of KeyError
 - No testing for this program has occurred on machines with other operating systems
 - Lack of error handling in order to reroute program and prevent server crashes
 - Lack of rerouting and input value clearing subsequent to running the encryption program successfully
