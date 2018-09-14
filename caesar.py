@@ -36,7 +36,6 @@ letters = {
 
 def encrypt_value(value):
 
-	# user_input = input("Enter string below: ")
 	user_input = value.upper()
 	decrypted = None
 
@@ -51,23 +50,38 @@ def encrypt_value(value):
 	print(decrypted)
 
 	# Perform the encryption
-	#NOTE: Modify to be function that can support encryption, decryption, and error handling
+	#NOTE: Modify to be function that can support encryption and error handling
 
 	encrypt_list = []
 
 	# randomize the shifter once for entire string
 	shifter = random.randint(1,9)
 
-	for el in decrypted:
-		index = letters[el] - shifter
-		try:
-			el = alphabet[index]
-		except IndexError:
-			if index > 26:
-				index - 26
-			else:
-				index + 26
-		encrypt_list.append(el)
+	# coin flip a negative or positive shifter operation
+	direction = random.randint(0,1)
+
+	if direction:
+		for el in decrypted:
+			index = letters[el] + shifter
+			try:
+				el = alphabet[index]
+			except IndexError:
+				if index > 26:
+					index - 26
+				else:
+					index + 26
+			encrypt_list.append(el)
+	else:
+		for el in decrypted:
+			index = letters[el] - shifter
+			try:
+				el = alphabet[index]
+			except IndexError:
+				if index > 26:
+					index - 26
+				else:
+					index + 26
+			encrypt_list.append(el)
 
 	encrypted = "".join(encrypt_list)
 
