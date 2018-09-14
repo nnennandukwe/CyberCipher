@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for
+import os
 import caesar
 app = Flask(__name__)
 
@@ -28,8 +29,9 @@ def encrypt():
         return render_template('index.html',encryption='')
 
 if __name__ == '__main__':
+    port = int(os.environ.get("PORT", 8080))
     app.run(
         host='0.0.0.0',
-        port=8080,
+        port=port,
         debug=True,
     )
