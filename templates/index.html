@@ -6,45 +6,50 @@
     <title>Cyber Cipher</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../static/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
 </head>
-<body>
-    <!-- Use SEMANTIC UI TO HANDLE STYLING UI -->
-    <h1>Welcome to Cyber Cipher!</h1>
+<body style="margin:auto; width:80%;">
+    <header class="ui container">
+        <h1>Welcome to Cyber Cipher!</h1>
+    </header>
     <br />
-    <table>
-        <tr>
-            <div>
-                <h2>Enter in a phrase and Cyber Cipher will encrypt it via the cryptographic Caesar Cipher</h2>
-            </div>
-        </tr>
-        <tr>
-            <div>
-                <div>
-                {% macro input(name, value='', type='text', size=16) -%}
-                    <input type="{{ type }}" name="{{ name }}" value="{{
-                        value|e }}" size="{{ size }}">
-                {%- endmacro %}
-                <form action="/encrypt" method="post">
-                    <p>
-                        {{ input('encryption', value='', type='text') }}
-                    </p>
-                    </div>
-                    <button type="submit">
-                        Run the Encryption
-                    </button>
-                    {% if encryption %}
-                        <p>{{ encryption }}</p>
-                    {% else %}
-                        <p></p>
-                    {% endif %}
-                </form>
+    <div>
+        <table>
+            <tr>
+                <div class="ui text container raised center justified segment" style="width:80%;">
+                    <h2>Enter in a phrase and Cyber Cipher will encrypt it via the cryptographic Caesar Cipher</h2>
                 </div>
-            </div>
-        </tr>
-        <tr>
-            <div>
-            </div>
-        </tr>
-    </table>
+            </tr>
+            <tr>
+                <div>
+                    <div>
+                    {% macro input(name, value='', type='text', size=16) -%}
+                        <input type="{{ type }}" name="{{ name }}" value="{{
+                            value|e }}" size="{{ size }}">
+                    {%- endmacro %}
+                    <form action="/encrypt" method="post" class="ui form">
+                        <div class="ui action input">
+                            {{ input('encryption', value='', type='text') }}
+                            <button type="submit" class="ui button">
+                                Run the Encryption
+                            </button>
+                            {% if encryption %}
+                                <p>{{ encryption }}</p>
+                            {% else %}
+                                <p></p>
+                            {% endif %}
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </tr>
+            <tr>
+                <div>
+                </div>
+            </tr>
+        </table>
+    </div>
 </body>
 </html>
