@@ -7,7 +7,7 @@ Cyber Cipher is designed to take in a string of characters a user enters in in o
 > Learn more about this cryptographic algorithm here https://en.wikipedia.org/wiki/Caesar_cipher
 <br>
 
-<img src="static/screenshot.png" alt="cyber cipher" width="100%" />
+<a href="https://cybercipher.herokuapp.com" target="_blank"><img src="static/screenshot.png" alt="cyber cipher" width="100%" /></a>
 
 ### Requirements
 - Python 2.7 / 3+
