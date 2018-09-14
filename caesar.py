@@ -55,9 +55,11 @@ def encrypt_value(value):
 
 	encrypt_list = []
 
-	#NOTE: Need to randomize the encryption shifter each time the function is called
+	# randomize the shifter once for entire string
+	shifter = random.randint(1,9)
+
 	for el in decrypted:
-		index = letters[el] - random.randint(1,9)
+		index = letters[el] - shifter
 		try:
 			el = alphabet[index]
 		except IndexError:
