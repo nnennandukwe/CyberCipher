@@ -2,6 +2,7 @@
 # Cyber Cipher
 ### A cryptographic Caesar Cipher Encryption Program
 Cyber Cipher is designed to take in a string of characters a user enters in in order to return an encrypted version of the string.
+Here's the live app site: https://cybercipher.herokuapp.com !
 Learn more about this cryptographic algorithm here https://en.wikipedia.org/wiki/Caesar_cipher
 ### Requirements
 - Python 2.7 / 3+
@@ -12,12 +13,13 @@ Learn more about this cryptographic algorithm here https://en.wikipedia.org/wiki
 - Install above requirements one at a time with `pip install insert-name-here`
 - In your Terminal, run `python main.py`
 ### Technologies Utilized
-1. Python 3.6
+1. Python 3.6+
 2. Flask
 3. Jinja2 as an HTML templating engine
 4. HTML5
 5. CSS3
 6. Semantic UI framework
+7. Heroku for deployment
 ### Why I Built The Cyber Cipher
 I was looking for interesting projects to build where I could set up a server and focus more on backend than frontend code. I wanted to utilize modern technologies while excluding unnecessary build tools for the sake of simplicity and thus, lack of necessity.
 ### What I'm Learning While Building This Program
