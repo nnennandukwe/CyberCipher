@@ -33,38 +33,42 @@ letters = {
 	"Z": 25,
 }
 
-user_input = input("Enter string below: ")
-user_input = user_input.upper()
-decrypted = None
+def encrypt_value(value):
 
-# Check for numbers in the sequence to remove
-#NOTE: Need to remove any special, non-alphabetic characters from user input
+	# user_input = input("Enter string below: ")
+	user_input = value.upper()
+	decrypted = None
 
-if user_input.isalpha():
-	decrypted = user_input
-else:
-	decrypted = re.sub(r'\d', "", user_input)
+	# Check for numbers in the sequence to remove
+	#NOTE: Need to remove any special, non-alphabetic characters from user input
 
-print(decrypted)
+	if user_input.isalpha():
+		decrypted = user_input
+	else:
+		decrypted = re.sub(r'\d', "", user_input)
 
-# Perform the encryption
-#NOTE: Modify to be function that can support encryption, decryption, and error handling
+	print(decrypted)
 
-encrypt_list = []
+	# Perform the encryption
+	#NOTE: Modify to be function that can support encryption, decryption, and error handling
 
-#NOTE: Need to randomize the encryption shifter each time the function is called
-for el in decrypted:
-	index = letters[el] - 3
-	try:
-		el = alphabet[index]
-	except IndexError:
-		if index > 26:
-			index - 26
-		else:
-			index + 26
-	encrypt_list.append(el)
+	encrypt_list = []
 
-encrypted = "".join(encrypt_list)
+	#NOTE: Need to randomize the encryption shifter each time the function is called
+	for el in decrypted:
+		index = letters[el] - 3
+		try:
+			el = alphabet[index]
+		except IndexError:
+			if index > 26:
+				index - 26
+			else:
+				index + 26
+		encrypt_list.append(el)
 
-print("ENCRYPTION: ", encrypted)
+	encrypted = "".join(encrypt_list)
+
+	print("ENCRYPTION: ", encrypted)
+
+	return encrypted
 

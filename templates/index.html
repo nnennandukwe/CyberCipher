@@ -19,14 +19,31 @@
         </tr>
         <tr>
             <div>
-                <input placeholder="Enter a phrase"/>
-                <button>
-                    Run the Encryption
-                </button>
+                <div>
+                {% macro input(name, value='', type='text', size=16) -%}
+                    <input type="{{ type }}" name="{{ name }}" value="{{
+                        value|e }}" size="{{ size }}">
+                {%- endmacro %}
+                <form action="/encrypt" method="post">
+                    <p>
+                        {{ input('encryption', value='', type='text') }}
+                    </p>
+                    </div>
+                    <button type="submit">
+                        Run the Encryption
+                    </button>
+                    {% if encryption %}
+                        <p>{{ encryption }}</p>
+                    {% else %}
+                        <p></p>
+                    {% endif %}
+                </form>
+                </div>
             </div>
         </tr>
         <tr>
-            <div></div>
+            <div>
+            </div>
         </tr>
     </table>
 </body>
