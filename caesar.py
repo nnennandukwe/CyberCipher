@@ -1,4 +1,5 @@
 import re
+import random
 # Initial Basic Caesar Cipher Cryptography Program
 
 # Alphabet
@@ -56,7 +57,7 @@ def encrypt_value(value):
 
 	#NOTE: Need to randomize the encryption shifter each time the function is called
 	for el in decrypted:
-		index = letters[el] - 3
+		index = letters[el] - random.randint(1,9)
 		try:
 			el = alphabet[index]
 		except IndexError:
