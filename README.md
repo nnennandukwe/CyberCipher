@@ -4,7 +4,8 @@
 Cyber Cipher is designed to take in a string of characters a user enters in in order to return an encrypted version of the string.
 > Here's the live app site: https://cybercipher.herokuapp.com
 > Learn more about this cryptographic algorithm here https://en.wikipedia.org/wiki/Caesar_cipher
-
+<br>
+<img src="static/screenshot.jpg" alt="cyber cipher" width="100%" />
 ### Requirements
 - Python 2.7 / 3+
 - Jinja2 (Templating Engine)
