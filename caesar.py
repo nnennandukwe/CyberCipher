@@ -89,5 +89,53 @@ def encrypt_value(value):
 
 	print("ENCRYPTION: ", encrypted)
 
+	# decrypt_value(
+	# value=encrypted,
+	# shifter=shifter,
+	# direction=direction
+	# )
+	
 	return encrypted
 
+def decrypt_value(value, shifter, direction):
+
+	user_input = value.upper()
+	encrypted = None
+
+	if user_input.isalpha():
+		encrypted = user_input
+	else:
+		encrypted = re.sub(r'\d', "", user_input)
+
+	print(encrypted)
+
+	decrypt_list = []
+
+	if direction:
+		for el in encrypted:
+			index = letters[el] - shifter
+			try:
+				el = alphabet[index]
+			except IndexError:
+				if index > 26:
+					index - 26
+				else:
+					index + 26
+			decrypt_list.append(el)
+	else:
+		for el in encrypted:
+			index = letters[el] + shifter
+			try:
+				el = alphabet[index]
+			except IndexError:
+				if index > 26:
+					index - 26
+				else:
+					index + 26
+			decrypt_list.append(el)
+
+	decrypted = "".join(decrypt_list)
+
+	print("DECRYPTION: ", decrypted)
+
+	return decrypted
