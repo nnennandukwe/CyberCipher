@@ -36,7 +36,7 @@ def encrypt_value(value):
 	if user_input.isalpha():
 		decrypted = user_input
 	else:
-		decrypted = re.sub(r'\d', "", user_input)
+		decrypted = re.sub(r'[^A-Za-z]', "", user_input)
 
 	print(decrypted)
 
